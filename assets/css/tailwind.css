@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes circle-loading {
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  .circle {
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #fff;
+    animation: circle-loading 1200ms ease infinite;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-screen-lg w-full m-auto px-4;
+  }
+}
